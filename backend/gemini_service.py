@@ -23,7 +23,7 @@ import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 # Gemini API configuration
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBlD9_tYNI9JP8MidfBXH3ALZz4zSX3M5c")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "YOUR_GEMINI_API_KEY_HERE")
 
 # Configure the Gemini client
 genai.configure(api_key=GEMINI_API_KEY)
