@@ -52,12 +52,11 @@
 
 # CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
-
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# Added libgles2 for Mediapipe and ca-certificates for MongoDB SSL
+# Added libegl1-mesa to provide libEGL.so.1 for MediaPipe
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
@@ -65,6 +64,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxext6 \
     libxrender-dev \
     libgles2 \
+    libegl1 \
+    libegl1-mesa \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
